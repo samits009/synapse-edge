@@ -3,6 +3,9 @@ import { processFieldReport } from "@/app/actions/match";
 import { rateLimiter, validateOrigin, getClientIP, verifyAuthToken } from "@/lib/security";
 import { validateInput, schemas } from "@/lib/utils";
 
+// Force dynamic — prevents Next.js from trying to pre-render this route at build time
+export const dynamic = "force-dynamic";
+
 /* ========================================================================
    POST /api/process-task
    ========================================================================
