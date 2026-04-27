@@ -1,0 +1,39 @@
+# ── Node / npm ────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ── Next.js ───────────────────────────────────────────────────
+.next/
+out/
+build/
+
+# ── Environment / Secrets ────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ── OS / Editor ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Misc build artifacts ─────────────────────────────────────
+lint_output.txt
+stitch_reference.html
+stitch_reference.png
+test_backend.ts
+
+# ── Android ──────────────────────────────────────────────────
+android/.gradle/
+android/local.properties
+android/app/release/
+*.apk
+*.aab
+
+# ── Coverage ─────────────────────────────────────────────────
+coverage/

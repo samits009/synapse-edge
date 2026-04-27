@@ -1,0 +1,22 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "volunteers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "availability",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "embedding",
+          "vectorConfig": {
+            "dimension": 768,
+            "flat": {}
+          }
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

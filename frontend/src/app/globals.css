@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* ========================================================================
+   SynapseEdge Mission Control — Global Design Tokens (Orange Ops)
+   ======================================================================== */
+
+:root {
+  --bg-primary: #080808;
+  --bg-card: rgba(15, 15, 15, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --accent-orange: #F27D26;
+  --accent-cyan: #00dce5;
+  --accent-red: #ef4444;
+  --accent-green: #22c55e;
+  --glow-orange: 0 0 20px rgba(242, 125, 38, 0.15);
+}
+
+html {
+  color-scheme: dark;
+}
+
+.font-space {
+  font-family: var(--font-space), 'Space Grotesk', sans-serif;
+}
+
+/* Glass panel utility */
+.glass-panel {
+  backdrop-filter: blur(16px);
+  background: rgba(12, 12, 12, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+.glass-panel:hover {
+  border-color: rgba(242, 125, 38, 0.2);
+  box-shadow: inset 0 0 20px rgba(242, 125, 38, 0.03), 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg-primary);
+  color: #e5e5e5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 40px grid background */
+  background-image:
+    linear-gradient(rgba(242, 125, 38, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 125, 38, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scanline animation */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-line {
+  background: linear-gradient(
+    to bottom,
+    rgba(242, 125, 38, 0) 0%,
+    rgba(242, 125, 38, 0.08) 50%,
+    rgba(242, 125, 38, 0) 100%
+  );
+  height: 30%;
+  width: 100%;
+  animation: scan 4s linear infinite;
+}
+
+/* Glowing border animation */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(242, 125, 38, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(242, 125, 38, 0.25); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(242, 125, 38, 0.2);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 125, 38, 0.4);
+}
+
+/* Urgency bar orange gradient */
+.urgency-fill {
+  background: linear-gradient(90deg, #F27D26, #FF4500);
+}
+
+/* M7: Focus-visible ring for keyboard navigation accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(242, 125, 38, 0.8);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link (visible only on focus for keyboard users) */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #F27D26;
+  color: #080808;
+  padding: 8px 24px;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 8px;
+}
