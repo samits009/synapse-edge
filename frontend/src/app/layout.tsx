@@ -17,6 +17,10 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "SynapseEdge // Mission Control",
   description: "Offline-first semantic orchestration engine for crisis response — Vector routing dashboard",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

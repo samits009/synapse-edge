@@ -120,6 +120,18 @@ export default function LoginPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] flex font-mono selection:bg-[#FF5A00] selection:text-black">
 
+      {/* ─── FULL-PAGE LOGO BACKGROUND ─── */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: "url('/logo-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.06,
+        }}
+      />
+
       {/* ─── LEFT PANEL: BRANDING ─── */}
       <div className="hidden lg:flex lg:w-[45%] relative flex-col justify-between p-12 overflow-hidden">
         {/* Subtle radial glow */}
@@ -136,8 +148,8 @@ export default function LoginPage() {
 
         <div className="relative z-10">
           {/* Logo */}
-          <div className="w-14 h-14 bg-[#FF5A00]/10 border border-[#FF5A00]/30 flex items-center justify-center mb-8">
-            <Cpu className="w-7 h-7 text-[#FF5A00]" />
+          <div className="w-14 h-14 bg-[#FF5A00]/10 border border-[#FF5A00]/30 flex items-center justify-center mb-8 overflow-hidden">
+            <img src="/favicon.png" alt="SynapseEdge" className="w-10 h-10 object-contain" />
           </div>
 
           <h1 className="font-space text-4xl font-black tracking-[0.1em] text-white uppercase leading-none mb-3">
