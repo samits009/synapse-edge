@@ -40,4 +40,4 @@ npm run dev
 Open `android/` in Android Studio and run on emulator/device.
 
 ## License
-MIT — Built for Google Solution Challenge 2026
+MIT - BUILT FOR GOOGLE SOLUTION CHALLENGE 2026
